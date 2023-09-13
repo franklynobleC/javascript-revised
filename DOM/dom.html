@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>Hello</button>
+    <button class="js-btn">Second Button</button>
+
+    <script>
+      //query Selector  helps  us  get any html Element  on Our Page
+      //every html element has a method   "  innerHTML   "  which  helps  us  get  the  content  of  the  element
+      console.log(document.querySelector("button").innerHTML);
+      //every html element has a method   "  innerHTML   "  which  helps  us  get  the  content  of  the  element
+      document.querySelector("button").innerHTML = "Changed";
+
+      //class  Selector  in  DOM
+      console.log(document.querySelector(".js-btn"));
+      const Element = document.querySelector(".js-btn");
+      console.log(Element);
+      /* document.body.innerHTML = "Hello";
+
+      document.title = "Good job";  */
+      /*
+         console.log(document.body);
+      console.log(typeof document.body);
+      console.log(document.body.innerHTML);
+      document.body.innerHTML = "Changed";
+      document.body.innerHTML = "<button>Ok Go!</button>";
+       */
+    </script>
+  </body>
+</html>

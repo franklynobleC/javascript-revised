@@ -1,0 +1,17 @@
+The Best way to calculate
+
+ money is to Use cents  Instead of  dollars when Calculating Money
+100 cents  in each dollar to converts cents to dollars
+
+
+20.95 + 7.99 = 28.94 cents
+(2095+799)/100
+28.94
+
+//how to Round A  number  in javascript
+
+round  the Number  the Convert to cents
+given  the number  in cents
+Math.round((2095 + 799) * 0.1)/100
+then convert  to dollar by/ 100
+

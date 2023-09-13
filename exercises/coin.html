@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <button
+        onclick="
+
+
+      "
+      >
+        heads
+      </button>
+      <button>tails</button>
+    </div>
+    <script>
+      const playGame = (guess) => {
+        if (guess === "heads") {
+          guess = "tails";
+          return guess;
+        } else if (guess === "tails") {
+          guess = "heads";
+          return guess;
+        }
+        return guess;
+      };
+
+       const result = playGame(guess)
+    </script>
+  </body>
+</html>

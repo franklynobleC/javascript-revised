@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <p>Youtube Subscribe Button</p>
+
+    <button
+      onclick="
+     subScribeF();
+    "
+      class=".js-subscribe-btn"
+    >
+      Subscribe
+    </button>
+
+    <h4>Amazon Shipping Calculator</h4>
+    <p class=".js-shipping-fee">Orders Under $40 = +10 shipping</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <input
+      class="js-cost-input"
+      placeholder="enter item price"
+      onkeydown="
+      handleCostKeydown(event);
+
+    "
+    />
+    <button
+      onclick="
+calCulateTotal()
+    "
+    >
+      Calculate
+    </button>
+    <p class="js-total"></p>
+
+    <script>
+      //check  key Event Type
+
+      function handleCostKeydown(event) {
+        if (event.key === "Enter") {
+          calCulateTotal();
+          return;
+        } else {
+          return;
+        }
+      }
+
+      //calculate  the  total amount  for  item + shipping if  item
+      //also Check  if  items are is  less than
+
+      function calCulateTotal() {
+        //NOTE. INPUT  Always Comes in AsString,  in case of  numbers,  Always convert to Numbers before any Calculation
+        const inputElement = document.querySelector(".js-cost-input");
+        //this gives  us the Value of  the input Element
+
+        let totalCost = 0;
+        inputElement.value;
+        if (inputElement.value < 40) {
+          let cost = Number(inputElement.value);
+
+          totalCost = cost + 10;
+
+          document.querySelector(
+            ".js-total"
+          ).innerHTML = ` Your item is ${inputElement.value}, Total. $${totalCost}`;
+        }
+        if (inputElement.value >= 40) {
+          document.querySelector(
+            ".js-total"
+          ).innerHTML = ` Your shipping is free, Total Amount is $${inputElement.value}`;
+        }
+
+        /*
+
+         let  cost = inputElement.value
+
+          if(cost < 40) {
+
+          }
+          */
+      }
+      const subScribeF = () => {
+        const btnElement = document.querySelector("button").innerHTML;
+
+        console.log(btnElement, "first Element");
+        if (btnElement) {
+          document.querySelector("button").innerHTML = "Subscribed";
+          console.log(btnElement, "last Element");
+        }
+        if (btnElement === "Subscribed") {
+          document.querySelector("button").innerHTML = "Subscribe";
+          console.log(btnElement);
+        }
+      };
+    </script>
+  </body>
+</html>
