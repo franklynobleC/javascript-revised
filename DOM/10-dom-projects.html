@@ -4,6 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DOM</title>
+    <style>
+      body {
+        font-family: Arial;
+      }
+
+      .js-subscribe-btn {
+        color: white;
+        background-color: black;
+        border: none;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      .js-calculate-btn {
+        border: none;
+        background-color: green;
+        color: white;
+        padding-top: 7.5px;
+        padding-bottom: 9.3px;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .js-subscribe-btn::after {
+        color: white;
+        background-color: grey;
+      }
+
+      .js-cost-input {
+        padding-top: 6.5px;
+        padding-bottom: 6.5px;
+        padding-left: 10px;
+      }
+
+      /*this  would change  the color and  background color of the button  */
+      /* see class List with Class Name btn-color-change */
+      .btn-color-change {
+        background-color: lightgray;
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <p>Youtube Subscribe Button</p>
@@ -12,7 +59,7 @@
       onclick="
      subScribeF();
     "
-      class=".js-subscribe-btn"
+      class="js-subscribe-btn"
     >
       Subscribe
     </button>
@@ -29,6 +76,7 @@
     "
     />
     <button
+      class="js-calculate-btn"
       onclick="
 calCulateTotal()
     "
@@ -75,12 +123,12 @@ calCulateTotal()
 
         /*
 
-         let  cost = inputElement.value
+               let  cost = inputElement.value
 
-          if(cost < 40) {
+                if(cost < 40) {
 
-          }
-          */
+                }
+                */
       }
       const subScribeF = () => {
         const btnElement = document.querySelector("button").innerHTML;
@@ -88,20 +136,32 @@ calCulateTotal()
         console.log(btnElement, "first Element");
         if (btnElement) {
           document.querySelector("button").innerHTML = "Subscribed";
+          (document.querySelector(".js-subscribe-btn").style.backgroundColor =
+            "lightgrey"),
+            (document.querySelector(".js-subscribe-btn").style.color = "black");
           console.log(btnElement, "last Element");
+          // another way of  applying  class
+          //document.querySelector(".js-subscribe-btn").classList.add("btn-color-change");
         }
         if (btnElement === "Subscribed") {
           document.querySelector("button").innerHTML = "Subscribe";
-          console.log(btnElement);
+
+          document.querySelector(".js-subscribe-btn").style.backgroundColor =
+            "black";
+          document.querySelector(".js-subscribe-btn").style.color = "white";
+
+          // this  is  to remove  the Class List
+          //document.querySelector(".js-subscribe-btn").classList.remove("btn-color-change");
+          // btnElement.classList.remove("btn-color-change");
         }
       };
-//NOTES:
+      //NOTES:
       /* The Document Object Represents  the   Web Page
-     The Window Object Represents  the   Browser
-     The HTML DOM Object Represents  the   HTML Document
-i.e The Document Object is Inside  the  Window
+           The Window Object Represents  the   Browser
+           The HTML DOM Object Represents  the   HTML Document
+      i.e The Document Object is Inside  the  Window
 
-     */
+           */
     </script>
   </body>
 </html>
