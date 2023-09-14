@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-btn-done">9b</button>
+    <hr />
+    <br />
+    <button class="js-btn-head" onclick="displayHeads()">heads</button>
+    <button class="js-btn-tails" onclick="displayTails()">tails</button>
+    <p class="js-p"></p>
+
+    <hr />
+    <br />
+
+    <input
+      class="js-input"
+      type="text"
+      placeholder="Name"
+      onkeydown="enterKey(event);"
+    />
+    <button
+      onclick="
+     getInputName();
+    "
+    >
+      Submit
+    </button>
+    <p class="js-output"></p>
+    <hr />
+    <br />
+
+    <input class="js-input1" onkeyup="getInputElement();" type="text" />
+    <p class="js-para1"></p>
+
+    <script>
+      function getInputElement() {
+        let inpElement = document.querySelector(".js-input1").value;
+        document.querySelector(".js-para1").innerHTML = inpElement;
+      }
+      function getInputName() {
+        let inputValue = document.querySelector(".js-input").value;
+
+        document.querySelector(
+          ".js-output"
+        ).innerHTML = `You Name  is: ${inputValue}`;
+      }
+
+      function enterKey(event) {
+        if (event.key === "Enter") {
+          console.log(event.key);
+          let inputValue = document.querySelector(".js-input").value;
+
+          document.querySelector(
+            ".js-output"
+          ).innerHTML = `You Name  is: ${inputValue}`;
+        }
+      }
+
+      const btn = document.querySelector("button");
+      console.log(btn);
+      let btn1 = (document.querySelector(".js-btn-done").innerHTML =
+        "9b done!");
+
+      document.querySelector(".js-btn-done").innerHTML = btn1;
+
+      function displayHeads() {
+        document.querySelector(".js-p").innerHTML = `You Chose: "heads"`;
+      }
+
+      function displayTails() {
+        document.querySelector(".js-p").innerHTML = `You Chose: "tails"`;
+      }
+    </script>
+  </body>
+</html>

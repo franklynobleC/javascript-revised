@@ -62,10 +62,11 @@ calCulateTotal()
           let cost = Number(inputElement.value);
 
           totalCost = cost + 10;
+          let afterRound = Math.round(totalCost);
 
           document.querySelector(
             ".js-total"
-          ).innerHTML = ` Your item is ${inputElement.value}, Total. $${totalCost}`;
+          ).innerHTML = ` Your item is ${inputElement.value}, Total. $${afterRound}`;
         }
         if (inputElement.value >= 40) {
           document.querySelector(
@@ -95,7 +96,7 @@ calCulateTotal()
           console.log(btnElement);
         }
       };
-//NOTES:
+      //NOTES:
       /* The Document Object Represents  the   Web Page
      The Window Object Represents  the   Browser
      The HTML DOM Object Represents  the   HTML Document
