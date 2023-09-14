@@ -1,0 +1,39 @@
+body {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  font-family: Arial;
+}
+.title {
+  font-size: bold;
+  font-family: Arial;
+}
+
+/* chnaging the  image height  would  automatically change  the Image of  the  height and  width,  and  it will  not later the quality of  the  image*/
+.move-icon {
+  height: 50px;
+}
+.move-btn {
+  background-color: black;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+
+  border: 1px solid white;
+  border-width: 3px;
+  margin-right: 10px;
+}
+.result {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 50 px;
+}
+
+.score {
+  margin-top: 60px;
+}
+.score-reset-btn {
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+}
