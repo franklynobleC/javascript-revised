@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .gaming,
+      .tech,
+      .music {
+        background-color: black;
+        color: white;
+        border-radius: 4.6px;
+        padding: 15px;
+      }
+
+      .change-btn {
+        background-color: lightgray;
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button
+        class="gaming"
+        onclick="
+
+    changeColorWhenClicked(event)
+      "
+      >
+        Gaming
+      </button>
+      <button
+        class="music"
+        onclick="changeColorWhenClicked(event)
+
+
+      "
+      >
+        Music
+      </button>
+      <button
+        class="tech"
+        onclick="  changeColorWhenClicked(event)
+
+
+      "
+      >
+        Tech
+      </button>
+    </div>
+    <script>
+      function changeColorWhenClicked(event) {
+        let colorChange = "change-btn";
+
+        if (
+          event.type === "click" &&
+          event.target.classList.contains("music")
+        ) {
+          document.getElementsByClassName("music");
+
+          console.log(document.querySelectorAll("music"));
+          document.querySelector(".music").classList.add(colorChange);
+
+          document.querySelector(".gaming").classList.remove(colorChange);
+          document.querySelector(".tech").classList.remove(colorChange);
+        }
+        if (
+          event.type === "click" &&
+          event.target.classList.contains("gaming")
+        ) {
+          document.querySelector(".music").classList.remove(colorChange);
+          document.querySelector(".tech").classList.remove(colorChange);
+
+          document.querySelector(".gaming").classList.add(colorChange);
+        }
+        if (event.type === "click" && event.target.classList.contains("tech")) {
+          document.querySelector(".music").classList.remove(colorChange);
+          document.querySelector(".gaming").classList.remove(colorChange);
+          document.querySelector(".tech").classList.add(colorChange);
+
+          //  document.querySelector(".tech").classList.add(colorChange);
+        }
+      } /*
+        if (!document.querySelector(".change-btn")) {
+          document.querySelector(".music").classList.add("change-btn");
+        } else if (document.querySelector(".change-btn")) {
+          document.querySelector(".change-btn").classList.remove("change-btn");
+        }
+        */
+    </script>
+  </body>
+</html>

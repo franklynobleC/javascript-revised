@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .gaming,
+      .tech,
+      .music {
+        background-color: black;
+        color: white;
+        border-radius: 4.6px;
+        padding: 15px;
+      }
+
+      .change-btn {
+        background-color: lightgray;
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button
+        class="gaming"
+        onclick="
+
+    changeColorWhenClicked()
+      "
+      >
+        Gaming
+      </button>
+
+      <div>
+        <button class="music" onclick="changeColorWhenClicked()">Music</button>
+      </div>
+      <button class="tech" onclick="changeColorWhenClicked()">Tech</button>
+      <button></button>
+    </div>
+    <script>
+      function changeColorWhenClicked() {
+        if (!document.querySelector(".change-btn")) {
+          document.querySelector(".gaming").classList.add("change-btn");
+        } else if (document.querySelector(".change-btn")) {
+          console.log("exist 3");
+          document.querySelector(".change-btn").classList.remove("change-btn");
+        }
+      }
+    </script>
+  </body>
+</html>
