@@ -13,6 +13,12 @@
         color: white;
         border-radius: 4.6px;
         padding: 15px;
+        margin-left: 15px;
+        padding: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
 
       .change-btn {
@@ -63,7 +69,7 @@
         ) {
           document.getElementsByClassName("music");
 
-          console.log(document.querySelectorAll("music"));
+
           document.querySelector(".music").classList.add(colorChange);
 
           document.querySelector(".gaming").classList.remove(colorChange);
@@ -82,16 +88,8 @@
           document.querySelector(".music").classList.remove(colorChange);
           document.querySelector(".gaming").classList.remove(colorChange);
           document.querySelector(".tech").classList.add(colorChange);
-
-          //  document.querySelector(".tech").classList.add(colorChange);
         }
-      } /*
-        if (!document.querySelector(".change-btn")) {
-          document.querySelector(".music").classList.add("change-btn");
-        } else if (document.querySelector(".change-btn")) {
-          document.querySelector(".change-btn").classList.remove("change-btn");
-        }
-        */
+      }
     </script>
   </body>
 </html>

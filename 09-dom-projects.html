@@ -58,7 +58,16 @@ calCulateTotal()
 
         let totalCost = 0;
         inputElement.value;
-        if (inputElement.value < 40) {
+
+        if (inputElement.value <= 0) {
+          document.querySelector(
+            ".js-total"
+          ).innerHTML = ` Error Cost can not be Less  than $${0 }`;
+          document.querySelector(".js-total").style.color = "red";
+          return;
+        }
+
+        if (inputElement.value <= 40) {
           let cost = Number(inputElement.value);
 
           totalCost = cost + 10;
@@ -72,16 +81,17 @@ calCulateTotal()
             ".js-total"
           ).innerHTML = ` Your shipping is free, Total Amount is $${inputElement.value}`;
         }
-
-        /*
-
-         let  cost = inputElement.value
-
-          if(cost < 40) {
-
-          }
-          */
       }
+
+      /*
+
+               let  cost = inputElement.value
+
+                if(cost < 40) {
+
+                }
+                */
+
       const subScribeF = () => {
         const btnElement = document.querySelector("button").innerHTML;
 
@@ -95,13 +105,13 @@ calCulateTotal()
           console.log(btnElement);
         }
       };
-//NOTES:
+      //NOTES:
       /* The Document Object Represents  the   Web Page
-     The Window Object Represents  the   Browser
-     The HTML DOM Object Represents  the   HTML Document
-i.e The Document Object is Inside  the  Window
+           The Window Object Represents  the   Browser
+           The HTML DOM Object Represents  the   HTML Document
+      i.e The Document Object is Inside  the  Window
 
-     */
+           */
     </script>
   </body>
 </html>
