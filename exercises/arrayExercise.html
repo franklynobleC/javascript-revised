@@ -9,17 +9,102 @@
   <body>
     <script>
       const arrayWords = ["hi", "Hello", "Morning"];
-
+      /*
       const arrayValue = [2, 3, 4, 5, 6];
       function lastValue() {
         for (i = 0; i <= arrayValue.length; i++) {
-          if (arrayValue.length -1) {
-
+          if (arrayValue.length - 1) {
             console.log(arrayValue[arrayValue.length - 1]);
           }
         }
       }
-      lastValue();
+      //lastValue();
+ /*
+      function arraySwap() {
+        let arr1 = [1, 20, 44, 6];
+        let ArrResult = [];
+        for (i = 0; i < arr1.length; i++) {
+          if (arr1[arr1.length - 1]) {
+            ArrResult[0] = arr1[arr1.length - 1];
+
+            //arr1.push(ArrResult); -->
+           // console.log(ArrResult, "===");
+        //  }
+          if (arr1[0]) {
+            ArrResult.push(arr1[0]);
+         //   console.log(ArrResult);
+            arr1[arr1.length - 1][0] = ArrResult[1];
+            arr1[arr1.length - 1][0] = ArrResult[0];
+        //    console.log(arr1[i], "Result");
+            arr1.shift();
+          }
+          if (arr1[i][0]) {
+            //  console.log(ArrResult);
+          }
+      //  }
+     // }
+//
+
+
+
+
+/*
+      function increaseByOne() {
+        let Aa = [];
+        let ArrayIncrease = [1, 2, 3, 4];
+        for (i = 0; i < ArrayIncrease.length; i++) {
+          //  Aa += ArrayIncrease[i] + 1;
+          ArrayIncrease += ArrayIncrease[i] + 1;
+        }
+        console.log(ArrayIncrease, "Array Increase");
+        console.log(Aa);
+      }
+           increaseByOne();
+
+      */
+
+      //Exercises 4 return Only Positive numbers from an Array
+      //return Only Positive Numbers
+      function checkPositiveNumber() {
+        let Result = [];
+        let ResultMinus = [];
+        let countNumbers = [2, 3, 4, 5, -6, -7];
+        for (i = 0; i < countNumbers.length; i++) {
+          if (countNumbers[i] > 0) {
+            //    Result += countNumbers[i];
+            Result.push(countNumbers[i]);
+            console.log(countNumbers[i], "Count Positive Number");
+          }
+                  }
+      
+        console.log(Result, "Result for Positive Numbers");
+      }
+      checkPositiveNumber();
+
+      function countPositiveNumber() {
+        let count = 0;
+        let Result = [];
+        let ResultMinus = [];
+        let countNumbers = [2, 3, 4, 5,6,7,8, -6, -7];
+        for (i = 0; i < countNumbers.length; i++) {
+          if (countNumbers[i] > 0) {
+            //    Result += countNumbers[i];
+            Result.push(countNumbers[i]);
+            count++;
+            console.log(
+              countNumbers[i],
+              "positive Numbers are",
+              count,
+              "Count Positive Number"
+            );
+          }
+          
+        }
+        console.log("positive Numbers are", count);
+
+        console.log(Result, "Result");
+      }
+      countPositiveNumber();
     </script>
   </body>
 </html>
