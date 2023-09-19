@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays2</title>
+  </head>
+  <body>
+    <script>
+      const array1 = [1, 2, 3];
+      //array1.slice();  creates another copy of  the same Array, so  they both would  not  point  to  the same reference
+      const array2 = array1.slice();
+      //array1.slice();  creates another copy of  the same Array, so  they both would  not  point  to  the same reference
+      array2.push(4);
+      console.log(array1);
+      console.log(array2);
+
+      //Array Destructuring
+
+      const [firstValue, secondValue, third] = [1, 2, 3];
+
+      console.log(firstValue);
+
+      //continue lets  you skip one  iteration  in  the loop
+      for (i = 0; i <= 10; i++) {
+        if (i % 3 === 0) {
+          //this would skip 5 and  then  continue with  loop from  6
+          continue;
+        }
+        console.log(i);
+        if (i === 8) {
+          //terminate from  loop
+          break;
+        }
+      }
+
+      //in while  loop,  continue would skip  the Incremental steps, so you have  to  put  incremental(i++) before  the  continue,  which  would  result to    infinite  loop
+
+      /*
+      let l = 1;
+      while (l <= 10) {
+        console.log(l);
+        if (l % 3 === 0) {
+          l++;
+          console.log(l);
+          continue;
+        }
+*/
+
+      // double each Item  in an Array
+      function doubleArray(nums) {
+        // const nums = [1, 2, 3];
+        const numsDoubled = [];
+
+        for (i = 0; i < nums.length; i++) {
+          const num = nums[i];
+          numsDoubled.push(num * 2);
+
+          if (num === 0) {
+            return numsDoubled;
+          }
+        }
+        console.log(numsDoubled, "Array Double");
+        return numsDoubled;
+      }
+      doubleArray([1, 2, 2, 3]);
+      doubleArray([1, 2, 4, 5, 0, 9]);
+    </script>
+  </body>
+</html>

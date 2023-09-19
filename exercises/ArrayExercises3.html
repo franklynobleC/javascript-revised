@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const searchWord = ["Hello", "world", "search", "good", "search"];
+
+      for (i = 0; i < searchWord.length; i++) {
+        if (searchWord[i] === "search") {
+          console.log(searchWord[i], "  ", i);
+          break;
+          console.log("index  is: ", i);
+        } else {
+          console.log(-1);
+        }
+      }
+
+      function findIndex(array, word) {
+        let i = 0;
+
+        while (i < array.length) {
+          if (array[i] === word) {
+            return i;
+          }
+          i++;
+        }
+        return -1;
+      }
+
+      const result = findIndex(["green", "red", "blue", "red", "red"], "red");
+
+      console.log(result);
+    </script>
+  </body>
+</html>
