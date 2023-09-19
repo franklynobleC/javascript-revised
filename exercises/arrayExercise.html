@@ -10,58 +10,58 @@
     <script>
       const arrayWords = ["hi", "Hello", "Morning"];
       /*
-      const arrayValue = [2, 3, 4, 5, 6];
-      function lastValue() {
-        for (i = 0; i <= arrayValue.length; i++) {
-          if (arrayValue.length - 1) {
-            console.log(arrayValue[arrayValue.length - 1]);
-          }
-        }
-      }
-      //lastValue();
- /*
-      function arraySwap() {
-        let arr1 = [1, 20, 44, 6];
-        let ArrResult = [];
-        for (i = 0; i < arr1.length; i++) {
-          if (arr1[arr1.length - 1]) {
-            ArrResult[0] = arr1[arr1.length - 1];
+            const arrayValue = [2, 3, 4, 5, 6];
+            function lastValue() {
+              for (i = 0; i <= arrayValue.length; i++) {
+                if (arrayValue.length - 1) {
+                  console.log(arrayValue[arrayValue.length - 1]);
+                }
+              }
+            }
+            //lastValue();
+       /*
+            function arraySwap() {
+              let arr1 = [1, 20, 44, 6];
+              let ArrResult = [];
+              for (i = 0; i < arr1.length; i++) {
+                if (arr1[arr1.length - 1]) {
+                  ArrResult[0] = arr1[arr1.length - 1];
 
-            //arr1.push(ArrResult); -->
-           // console.log(ArrResult, "===");
-        //  }
-          if (arr1[0]) {
-            ArrResult.push(arr1[0]);
-         //   console.log(ArrResult);
-            arr1[arr1.length - 1][0] = ArrResult[1];
-            arr1[arr1.length - 1][0] = ArrResult[0];
-        //    console.log(arr1[i], "Result");
-            arr1.shift();
-          }
-          if (arr1[i][0]) {
-            //  console.log(ArrResult);
-          }
-      //  }
-     // }
-//
-
-
+                  //arr1.push(ArrResult); -->
+                 // console.log(ArrResult, "===");
+              //  }
+                if (arr1[0]) {
+                  ArrResult.push(arr1[0]);
+               //   console.log(ArrResult);
+                  arr1[arr1.length - 1][0] = ArrResult[1];
+                  arr1[arr1.length - 1][0] = ArrResult[0];
+              //    console.log(arr1[i], "Result");
+                  arr1.shift();
+                }
+                if (arr1[i][0]) {
+                  //  console.log(ArrResult);
+                }
+            //  }
+           // }
+      //
 
 
-/*
-      function increaseByOne() {
-        let Aa = [];
-        let ArrayIncrease = [1, 2, 3, 4];
-        for (i = 0; i < ArrayIncrease.length; i++) {
-          //  Aa += ArrayIncrease[i] + 1;
-          ArrayIncrease += ArrayIncrease[i] + 1;
-        }
-        console.log(ArrayIncrease, "Array Increase");
-        console.log(Aa);
-      }
-           increaseByOne();
 
-      */
+
+      /*
+            function increaseByOne() {
+              let Aa = [];
+              let ArrayIncrease = [1, 2, 3, 4];
+              for (i = 0; i < ArrayIncrease.length; i++) {
+                //  Aa += ArrayIncrease[i] + 1;
+                ArrayIncrease += ArrayIncrease[i] + 1;
+              }
+              console.log(ArrayIncrease, "Array Increase");
+              console.log(Aa);
+            }
+                 increaseByOne();
+
+            */
 
       //Exercises 4 return Only Positive numbers from an Array
       //return Only Positive Numbers
@@ -75,17 +75,18 @@
             Result.push(countNumbers[i]);
             console.log(countNumbers[i], "Count Positive Number");
           }
-                  }
-      
+        }
+
         console.log(Result, "Result for Positive Numbers");
       }
       checkPositiveNumber();
 
+      //Count  the Number of  positive and  return  how  many  numbers  in  the Array that   are Greater than   0
       function countPositiveNumber() {
         let count = 0;
         let Result = [];
         let ResultMinus = [];
-        let countNumbers = [2, 3, 4, 5,6,7,8, -6, -7];
+        let countNumbers = [2, 3, 4, 5, 6, 7, 8, -6, -7];
         for (i = 0; i < countNumbers.length; i++) {
           if (countNumbers[i] > 0) {
             //    Result += countNumbers[i];
@@ -98,13 +99,50 @@
               "Count Positive Number"
             );
           }
-          
         }
         console.log("positive Numbers are", count);
 
         console.log(Result, "Result");
       }
       countPositiveNumber();
+
+      //TODO find  the Maximum in the Array
+      function maxiNumber() {
+        let number1 = [2, 4, 5, 1100, 14, 5, 6, 7, 8];
+        //let number1 = [2, 4, 5,11,12,14, 5, 6, 7,8];
+        let number2 = [];
+        let result = {};
+
+        for (i = 0; i <= number1[i]; i++) {
+          result = number1[i];
+
+          //in if  statement  find  the  highest Number  in  an Array
+        }
+
+        console.log(result);
+      }
+
+      maxiNumber();
+
+      //Count  the Number of occurrence of Words
+      function wordCount() {
+        const words = ["james", "apple", "grape", "apple"];
+        //let number1 = [2, 4, 5,11,12,14, 5, 6, 7,8];
+        let number2 = [];
+        let result = {};
+        let count = 0;
+        for (i = 0; i <= words.length; i++) {
+          number2.push(words[i]);
+
+          if (words[i]) {
+            console.log(words);
+          }
+        }
+
+        //in if  statement  find  the  highest Number  in  an Array
+      }
+
+      wordCount();
     </script>
   </body>
 </html>
