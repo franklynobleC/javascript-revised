@@ -9,10 +9,12 @@ function renderTodoList () {
     const todoObject = todoList[i]
     const { name, dueDate } = todoObject
     //generating  html
-    const html = `<p>
-     ${name}${dueDate}
-     <button onClick="todoList.splice(${i},1)">Delete</button>
-      </p>`
+    const html = `
+    <div> ${name}</div>
+ <div>   ${dueDate}</div>
+     <button onclick="todoList.splice(${i},1);
+ renderTodoList();"
+  class="js-todo-delete-button">Delete</button>`
 
     todoListHTML += html
     document.querySelector('.js-todo-list').innerHTML = todoListHTML
@@ -22,6 +24,8 @@ function renderTodoList () {
 function addTodo () {
   let inputElement = document.querySelector('.js-name-input')
   let dueDateElement = document.querySelector('.js-due-date-input')
+  let todoDelete = document.querySelector('.js-todo-delete-button')
+  let setDeleteColor = (todoDelete.innerHTML.style.backgroundColor = 'red')
   const name = inputElement.value
   const dueDate = dueDateElement.value
   if (name) {
