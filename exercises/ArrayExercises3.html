@@ -18,7 +18,7 @@
           console.log(-1);
         }
       }
-
+      //create a function findIndex (array,word) that searches multiple times in  the array,
       function findIndex(array, word) {
         let i = 0;
 
@@ -34,6 +34,120 @@
       const result = findIndex(["green", "red", "blue", "red", "red"], "red");
 
       console.log(result);
+
+      function removeEggs(array) {
+        console.log("from Egg array");
+        let remains = [];
+        let i = 0;
+        let count = 0;
+        while (i < array.length) {
+          if (array[i] !== "egg") {
+            //  remains += array[i];
+            remains.push(array[i]);
+          }
+          i++;
+          continue;
+        }
+        return remains;
+      }
+
+      const rs = removeEggs(["egg", "apple", "egg", "egg", "ham"]);
+      console.log(rs);
+
+      function removeEggsCount(array) {
+        console.log("from Egg array");
+        let remains = [];
+        let hams = [];
+        let i = 0;
+        let count = 0;
+        while (i < array.length) {
+          if (array[i] === "egg") {
+            remains += array[i];
+
+            if (remains[i].length === 2) {
+              console.log("==========", remains);
+            }
+          }
+
+          i++;
+        }
+        return array;
+      }
+      //  const rs2 = removeEggsCount(["egg", "apple", "egg", "egg", "ham"]);
+      //  console.log(rs2);
+      function removeEggsCount1(array) {
+        console.log("Array2");
+        let remains = [];
+        let hams = [];
+
+        let count = 0;
+
+        for (let i = 0; i <= array.length; i++) {
+          if (array[i] === "egg") {
+            count++;
+            //  array.reverse();
+            console.log("reversed", array);
+            remains.push(array[i]);
+
+            array.splice(i, 1);
+            // array = array.reverse();
+            console.log(array);
+            if (remains.length === 2) {
+              continue;
+            }
+          }
+        }
+      }
+      const rs3 = removeEggsCount1(["egg", "apple", "egg", "egg", "ham"]);
+      console.log(rs3);
+
+      function fizzBuzz(number) {
+        let message = "";
+        let i = 1;
+        while (i <= number) {
+          if (number % 3 === 0 && number % 5 === 0) {
+            message = "FizzBuzz";
+            return message;
+          }
+          if (number % 3 === 0) {
+            message = "FIZZ";
+            return message;
+          }
+
+          if (number % 5 === 0) {
+            message = "BUZZ";
+            return message;
+          } else {
+            message = `${number}, "does not  match the required  cal"`;
+            return message;
+          }
+        }
+        return message;
+      }
+      //  let res = fizzBuzz(10);
+      console.log(fizzBuzz(1));
+
+      //TODO
+     //  COME BACK TO  THIS EXERCISE
+      function unique(array) {
+        let array2 = [];
+        let array3 = [];
+
+        for (i = 0; i <= array.length; i++) {
+          array = array.findIndex((item, index) => {
+            console.log(item, index);
+
+            array += array3.push(item);
+          });
+          if (array3[i] === array[i]) {
+            console.log(array3[i], array[i], "");
+            console.log(array3[i], array[i], "Last");
+          }
+        }
+        return array3;
+      }
+
+      console.log(unique(["egg", "apple", "egg", "egg", "ham"]));
     </script>
   </body>
 </html>

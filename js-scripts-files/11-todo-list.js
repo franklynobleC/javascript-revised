@@ -1,7 +1,10 @@
-const todoList = [
-  { name: 'make dinner', dueDate: '19-20-2023' },
-  { name: 'do  laundry', dueDate: '19-20-2023' }
-]
+let todoList = JSON.parse(localStorage.getItem('todoList')) || {
+  name: 'make dinner',
+  dueDate: '19-20-2023',
+  name: 'do  laundry',
+  dueDate: '19-20-2023'
+}
+
 renderTodoList()
 function renderTodoList () {
   let todoListHTML = ''
@@ -25,7 +28,7 @@ function addTodo () {
   let inputElement = document.querySelector('.js-name-input')
   let dueDateElement = document.querySelector('.js-due-date-input')
   let todoDelete = document.querySelector('.js-todo-delete-button')
-  let setDeleteColor = (todoDelete.innerHTML.style.backgroundColor = 'red')
+
   const name = inputElement.value
   const dueDate = dueDateElement.value
   if (name) {
@@ -39,4 +42,5 @@ function addTodo () {
   }
 
   renderTodoList()
+  localStorage.setItem('todoList', JSON.stringify(todoList))
 }
