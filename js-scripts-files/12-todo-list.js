@@ -8,24 +8,20 @@ let todoList = JSON.parse(localStorage.getItem('todoList')) || {
 renderTodoList()
 function renderTodoList () {
   let todoListHTML = ''
-  //  for (let i = 0; i < todoList.length; i++) {
-  const todoObject = todoList.forEach(
-    todoObject,
-    index => {
-      const { name, dueDate } = todoObject
-      //generating  html
-      const html = `
+  for (let i = 0; i < todoList.length; i++) {
+    const todoObject = todoList[i]
+    const { name, dueDate } = todoObject
+    //generating  html
+    const html = `
     <div> ${name}</div>
-    <div>   ${dueDate}</div>
-    <button onclick="todoList.splice(${index},1);
-    renderTodoList();"
-    class="js-todo-delete-button">Delete</button>`
+ <div>   ${dueDate}</div>
+     <button onclick="todoList.splice(${i},1);
+ renderTodoList();"
+  class="js-todo-delete-button">Delete</button>`
 
-      todoListHTML += html
-      document.querySelector('.js-todo-list').innerHTML = todoListHTML
-    }
-    //end  here
-  )
+    todoListHTML += html
+    document.querySelector('.js-todo-list').innerHTML = todoListHTML
+  }
 }
 
 function addTodo () {

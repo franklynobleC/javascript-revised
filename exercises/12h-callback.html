@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apps</title>
+  </head>
+  <body>
+    <button class="btn-start" onclick="btnFunction();">Start</button>
+    <button class="btn-addToCart" onclick="btnAddToCart();">Add to Cart</button>
+    <p class="addToCart"></p>
+
+    <button onclick="btnAdd();">Add</button>
+    <button onClick="btnRemove();">Remove</button>
+    <script>
+      let add = function (a, b) {
+        console.log(a + 3);
+      };
+      let i = 0;
+      let count = 0;
+      while (i < 2) {
+        add(2, 3);
+        count = count + 1;
+
+        i++;
+      }
+      function btnFunction() {
+        let btnElement = (document.querySelector(".btn-start").innerHTML =
+          "Loading...!");
+
+        setTimeout(() => {
+          let btnElement = (document.querySelector(".btn-start").innerHTML =
+            "Finished!");
+        }, 1000);
+      }
+
+      function btnAddToCart() {
+        let timeoutId;
+
+        document.querySelector(".addToCart").innerHTML = "Added";
+
+        // First, cancel the previous timeout so that
+        // it doesn't remove the message too quickly.
+        //  clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => {
+          document.querySelector(".addToCart").innerHTML = "";
+        }, 2000);
+      }
+
+      // Every 2 seconds, update the title.
+      // The title is updated in the UI thread, so this is safe.
+
+      let intId = false;
+      let messageVariable = 1;
+
+      function btnAdd() {
+        messageVariable = messageVariable + 1;
+        console.log("Messages  ", messageVariable);
+      }
+      function btnRemove() {
+        if (messageVariable > 0) {
+          messageVariable = messageVariable - 1;
+          console.log("Messages  ", messageVariable);
+        }
+      }
+
+      intId = setInterval(() => {
+        intId = setInterval(() => {
+          messageVariable;
+          console.log("  Console 1");
+          document.title = `(${messageVariable})New messages`;
+          clearInterval(intId);
+        }, 1000);
+
+        console.log("Console 2");
+        document.title = `Apps`;
+      }, 2000);
+    </script>
+  </body>
+</html>
