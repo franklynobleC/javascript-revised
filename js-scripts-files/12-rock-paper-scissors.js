@@ -37,6 +37,27 @@ function autoPlay () {
     isAutoPlaying = false
   }
 }
+
+//event for   rock
+let rockBtnElement = document
+  .querySelector('.js-rock-button')
+  .addEventListener('click', () => {
+    playGame('rock')
+  })
+
+//event for Paper
+let paperBtnElement = document
+  .querySelector('.js-button-paper')
+  .addEventListener('click', () => {
+    playGame('paper')
+  })
+
+//event for scissors
+let scissorsBtnElement = document
+  .querySelector('.js-button-scissors')
+  .addEventListener('click', () => {
+    playGame('scissors')
+  })
 function playGame (playerMove) {
   const computerMove = pickComputerMove()
 

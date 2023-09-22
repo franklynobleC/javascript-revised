@@ -6,7 +6,25 @@
     <title>Advanced functions</title>
   </head>
   <body>
+    <button onclick="" class="js-btn-click">Click</button>
+
     <script>
+      //Add EventListener, It is a function that is called when the event occurs
+      // the Event is
+      // 1. click
+      // 2. mouseover
+      //removeEventListener ,   is used to Remove An Event
+      //NOTES; Best Practices,  is  to  use EventListener instead of onclick
+      const buttonElement = document.querySelector(".js-btn-click");
+
+      const eventListener = () => {
+        console.log("click");
+      };
+
+      buttonElement.addEventListener("click", eventListener);
+      //buttonElement.addEventListener('click2', eventListener)
+buttonElement.removeEventListener("click",eventListener)
+
       /*
       function greeting() {
         console.log("hello");
@@ -63,7 +81,7 @@
 
       */
       //console.log("next  line2");
-
+      /**
       //forEach function  is  the preferred way to  loop through  an  array  in Javascript
       ["make dinner", " wash dishes", "watch youtube"].forEach(function (
         value,
@@ -74,6 +92,34 @@
         }
         console.log(value);
       });
+
+      //Arrow function
+      const oneParam = (para) => {
+        console.log(para + 1);
+      };
+      const oneLine = () => 2 + 7;
+
+      console.log(oneLine());
+
+      //TODO  NOTES
+      //calling a function  before it's  defined  it's called Hoisting
+      //its declared
+      console.log(displayName("name"));
+      function displayName(name) {
+        return name;
+      }
+      //
+
+      //shorthand function Syntax
+      const Object4 = {
+        method: () => {},
+        //shorthand syntax in  Object
+        method() {
+
+        },
+      };
+
+      */
     </script>
   </body>
 </html>
