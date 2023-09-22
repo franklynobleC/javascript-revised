@@ -23,7 +23,7 @@
 
       buttonElement.addEventListener("click", eventListener);
       //buttonElement.addEventListener('click2', eventListener)
-buttonElement.removeEventListener("click",eventListener)
+      buttonElement.removeEventListener("click", eventListener);
 
       /*
       function greeting() {
@@ -119,7 +119,45 @@ buttonElement.removeEventListener("click",eventListener)
         },
       };
 
+        */
+      //return  the  values  that's in  the Array Thats greater than 0
+      console.log(
+        [1, -3, 2, -1, 5].filter((value, index) => {
+          /*
+          if (value >= 0) {
+            return true;
+          } else {
+            return false;
+          }
+          */
+          return value >= 0;
+        })
+      );
+
+      /*
+      console.log(
+        [1, 1, 3].forEach((value, index) => {
+
+ return value *2;
+        })
+      );
       */
+      /*
+      [1, 1, 3].forEach((value, index) => {
+        value = value * 2;
+        console.log(value,  index);
+      });
+      */
+      //1. .map() creates a  new  array[]
+      //2. Whatever  we  return  => would  be added to  the new Array
+      //3. map() = transform an Array  into another Array
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          return value * 10;
+        })
+      );
+      // arrow function shortcut
+      console.log([1, 1, 3].map((value) => value * 10));
     </script>
   </body>
 </html>

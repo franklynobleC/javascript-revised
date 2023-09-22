@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Exercises 12o  update 12,  create a function to  only remove  the first 2 eggs from  the array
+      // Again,  use.filter()  instead  of  loop
+      const removeEgg1 = (foods) => {
+        let finalValues = [];
+        let eggValues = [];
+        let foodsResult = foods.filter((value) => {
+          if (value === "egg") {
+            eggValues.push(value);
+            if (eggValues.length === 2) {
+              return finalValues.push(value);
+            }
+          } else {
+            return finalValues.push(value);
+          }
+        });
+
+        console.log(foodsResult);
+        return foodsResult;
+      };
+
+      console.log(removeEgg1(["egg", "apple", "ham", "egg", "egg"]));
+
+      //exercises 12n create a function  that  takes and array of  strings and returns and  array where  the string  'egg' is removed
+      //use filter Method
+      const removeEgg = (foods) => {
+        let allFoods = foods.filter((value) => {
+          return value !== "egg";
+        });
+
+        return allFoods;
+      };
+      // console.log(removeEgg(["egg", "apple", "ham", "egg", "egg"]));
+      //exercise 12m create a  function  that Takes an array of numbers and a number and returns a new array with the number added to each of the numbers in the first array
+      const addNum = (numbArray, number) => {
+        console.log("result Add numb Array");
+
+        let resultA = numbArray.map((value) => {
+          return value + number;
+        });
+        return resultA;
+      };
+
+      //console.log(addNum([-2, -1, 0, 99], 2));
+      // create a function  that  multiplies 2  numbers and  returns  the result
+      const multiply = (a, b) => a * b;
+
+      // console.log(multiply(2, 3));
+      const countPositive = (numArray) => {
+        let count = 0;
+        numArray.forEach((value) => {
+          if (value >= 0) {
+            count = count + 1;
+            return count;
+          }
+        });
+
+        return count;
+      };
+
+      // console.log(countPositive([-2,3,-5,7,10]));
+    </script>
+  </body>
+</html>
