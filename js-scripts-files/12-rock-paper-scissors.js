@@ -23,6 +23,25 @@ updateScoreElement()
 let isAutoPlaying = false
 let intervalId
 
+//button upDateScoreElement
+let btnUpdateScoreElement = document
+  .querySelector('.js-button-reset')
+  .addEventListener('click', () => {
+    score.wins = 0
+    score.loses = 0
+    score.ties = 0
+    localStorage.removeItem('score')
+    updateScoreElement()
+  })
+
+//Button event for AutoPlay
+
+let btnAutoPlayElement = document
+  .querySelector('.js-button-autoplay')
+  .addEventListener('click', () => {
+    autoPlay()
+  })
+
 function autoPlay () {
   if (!isAutoPlaying) {
     intervalId = setInterval(function () {
