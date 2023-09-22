@@ -42,6 +42,26 @@ let btnAutoPlayElement = document
     autoPlay()
   })
 
+document.body.addEventListener('keydown', event => {
+  console.log(event.key)
+  if (event.key === 'o' || event.key === 'O') {
+    autoPlay()
+  }
+
+  if (event.key === 'p' || event.key === 'P') {
+    playGame('paper')
+    console.log('paper')
+  }
+
+  if (event.key === 'r' || event.key === 'R') {
+    console.log('rock')
+    playGame('rock')
+  }
+  if (event.key === 's' || event.key === 'S') {
+    console.log('scissors')
+    playGame('scissors')
+  }
+})
 function autoPlay () {
   if (!isAutoPlaying) {
     intervalId = setInterval(function () {
