@@ -6,7 +6,7 @@ let todoList = JSON.parse(localStorage.getItem('todoList')) || {
 }
 
 renderTodoList()
-function renderTodoList () {
+function renderTodoList() {
   let todoListHTML = ''
   for (let i = 0; i < todoList.length; i++) {
     const todoObject = todoList[i]
@@ -15,15 +15,36 @@ function renderTodoList () {
     const html = `
     <div> ${name}</div>
  <div>   ${dueDate}</div>
-     <button onclick="todoList.splice(${i},1);
- renderTodoList();"
+     <button
   class="js-todo-delete-button">Delete</button>`
 
+    // put  the  html  on  the  Page
     todoListHTML += html
     document.querySelector('.js-todo-list').innerHTML = todoListHTML
   }
-}
 
+  //   querySelectorAll would  give you  all  the element with  class,  todo,
+  //Add element  delete Button
+  // get all The Element from  the List, Loop Through  the List,  for Each Element addEventListener
+  document
+    .querySelectorAll('.js-todo-delete-button')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        todoList.splice(index, 1)
+        renderTodoList()
+      })
+    })
+}
+//Event Add Button
+let todoAddBtnElement = document
+  .querySelector('.js-todo-addButton')
+  .addEventListener('click', () => {
+    addTodo()
+  })
+//Event DeleteButton
+let todoDeleteButton = document
+  .querySelector('.js-todo-delete-button')
+  .addEventListener('click', () => {})
 function addTodo () {
   let inputElement = document.querySelector('.js-name-input')
   let dueDateElement = document.querySelector('.js-due-date-input')
@@ -37,8 +58,6 @@ function addTodo () {
     console.log(todoList)
 
     document.querySelector('.js-name-input').value = ''
-  } else {
-    document.querySelector('.js-name-input').value = 'please Enter  value'
   }
 
   renderTodoList()
